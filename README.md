@@ -37,3 +37,4 @@ Buka URL yang diberikan di terminal untuk mengakses dashboard di browser Anda.
 Gunakan slider di sidebar untuk memfilter data berdasarkan variabel cuaca.
 Pilih variabel untuk melihat korelasi antara faktor cuaca dan jumlah penyewaan sepeda.
 Pilih jenis visualisasi untuk melihat grafik yang berbeda dari data yang difilter.# Dashboard-Streamlit-Bike
+# Dashboard-Streamlit-Bike
