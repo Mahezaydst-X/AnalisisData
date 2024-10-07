@@ -6,7 +6,7 @@ import streamlit as st
 # Fungsi untuk membaca data
 @st.cache_data
 def load_data():
-    data = pd.read_csv("/Users/mahezayudistia/Movies/AnalisisData/Dashboard/all_data.csv")  # Path absolut ke file
+    data = pd.read_csv("all_data.csv")  # Menggunakan path relatif
     return data
 
 # Memuat data
