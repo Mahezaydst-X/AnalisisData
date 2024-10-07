@@ -5,7 +5,6 @@ import streamlit as st
 
 # Fungsi untuk membaca data
 @st.cache_data
-@st.cache_data
 def load_data():
     data = pd.read_csv("all_data.csv")  # Karena berada di folder yang sama
     return data
