@@ -5,12 +5,10 @@ import streamlit as st
 
 # Fungsi untuk membaca data
 @st.cache_data
+@st.cache_data
 def load_data():
-    file_path = "all_data.csv"  # Pastikan file ini berada di direktori yang sama dengan dashboard.py
-    if not os.path.exists(file_path):
-        st.error(f"File '{file_path}' tidak ditemukan. Pastikan file ada di direktori yang benar.")
-        return None
-    return pd.read_csv(file_path)
+    data = pd.read_csv("all_data.csv")  # Karena berada di folder yang sama
+    return data
 
 # Memuat data
 st.title("Dashboard Interaktif: Analisis Penyewaan Sepeda Berdasarkan Faktor Cuaca")
