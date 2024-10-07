@@ -4,10 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Fungsi untuk membaca data
-@st.cache_data
-def load_data():
-    data = pd.read_csv("all_data.csv")  # Karena berada di folder yang sama
-    return data
+all_df = pd.read_csv("dashboard/all_data.csv")
 
 # Memuat data
 st.title("Dashboard Interaktif: Analisis Penyewaan Sepeda Berdasarkan Faktor Cuaca")
