@@ -9,7 +9,7 @@ st.title("Sales and Customer Analysis Dashboard")
 st.write("This dashboard provides insights into sales performance, customer demographics, and product preferences.")
 
 # Check if the file exists
-file_path = "all_data.csv"  # Assuming this is the correct relative path
+all_df = pd.read_csv("all_data.csv")
 
 if not os.path.exists(file_path):
     st.error(f"File '{file_path}' not found. Please upload it.")
