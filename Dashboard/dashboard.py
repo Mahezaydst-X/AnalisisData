@@ -116,4 +116,10 @@ if os.path.exists(file_path):
     ax[1].set_title("Top 5 Customers by Frequency")
 
     # Pelanggan Teratas berdasarkan Monetary Value
-    top_monetary = rfm_df.sort_values(by='total_price', ascending=False).head(
+    top_monetary = rfm_df.sort_values(by='total_price', ascending=False).head(5)
+    sns.barplot(x=top_monetary['total_price'], y=top_monetary['customer_id'], ax=ax[2], palette='Reds_d')
+    ax[2].set_title("Top 5 Customers by Monetary Value")
+    st.pyplot(fig)
+
+else:
+    st.error(f"File '{file_path}' not found. Please upload it.")
