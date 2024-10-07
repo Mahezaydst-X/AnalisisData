@@ -8,8 +8,22 @@ import os
 st.title("Sales and Customer Analysis Dashboard")
 st.write("This dashboard provides insights into sales performance, customer demographics, and product preferences.")
 
-# Tentukan path ke file CSV
-file_path = "all_data.csv"  # Pastikan ini sesuai dengan lokasi file Anda
+import streamlit as st
+import pandas as pd
+
+st.title("Sales and Customer Analysis Dashboard")
+st.write("This dashboard provides insights into sales performance, customer demographics, and product preferences.")
+
+# Upload file
+uploaded_file = st.file_uploader("Upload all_data.csv", type="csv")
+
+if uploaded_file is not None:
+    all_df = pd.read_csv(uploaded_file)
+    st.write("Data loaded successfully!")
+    
+    # Lanjutkan dengan analisis data Anda...
+else:
+    st.error("Please upload the 'all_data.csv' file to continue.")
 
 # Cek apakah file ada
 if os.path.exists(file_path):
