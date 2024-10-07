@@ -8,22 +8,8 @@ import os
 st.title("Sales and Customer Analysis Dashboard")
 st.write("This dashboard provides insights into sales performance, customer demographics, and product preferences.")
 
-import streamlit as st
-import pandas as pd
-
-st.title("Sales and Customer Analysis Dashboard")
-st.write("This dashboard provides insights into sales performance, customer demographics, and product preferences.")
-
-# Upload file
-uploaded_file = st.file_uploader("Upload all_data.csv", type="csv")
-
-if uploaded_file is not None:
-    all_df = pd.read_csv(uploaded_file)
-    st.write("Data loaded successfully!")
-    
-    # Lanjutkan dengan analisis data Anda...
-else:
-    st.error("Please upload the 'all_data.csv' file to continue.")
+# Tentukan path ke file CSV
+file_path = "Dashboard/all_data.csv"  # Path relatif ke file all_data.csv
 
 # Cek apakah file ada
 if os.path.exists(file_path):
@@ -130,10 +116,4 @@ if os.path.exists(file_path):
     ax[1].set_title("Top 5 Customers by Frequency")
 
     # Pelanggan Teratas berdasarkan Monetary Value
-    top_monetary = rfm_df.sort_values(by='total_price', ascending=False).head(5)
-    sns.barplot(x=top_monetary['total_price'], y=top_monetary['customer_id'], ax=ax[2], palette='Reds_d')
-    ax[2].set_title("Top 5 Customers by Monetary Value")
-    st.pyplot(fig)
-
-else:
-    st.error(f"File '{file_path}' not found. Please upload it.")
+    top_monetary = rfm_df.sort_values(by='total_price', ascending=False).head(
