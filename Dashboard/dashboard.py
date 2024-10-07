@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Fungsi untuk membaca data
-all_df = pd.read_csv("dashboard/all_data.csv")
+all_df = pd.read_csv("all_data.csv")  # Menggunakan path relatif dalam direktori yang sama
 
 # Memuat data
 st.title("Dashboard Interaktif: Analisis Penyewaan Sepeda Berdasarkan Faktor Cuaca")
